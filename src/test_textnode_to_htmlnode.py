@@ -2,7 +2,7 @@ import unittest
 from leafnode import LeafNode
 from parentnode import ParentNode
 from textnode import TextNode, TextType
-from textnode_to_htmlnode import text_node_to_html_node
+from functions.textnode_to_htmlnode import text_node_to_html_node
 
 
 class TestParentNode(unittest.TestCase):
