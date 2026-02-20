@@ -6,7 +6,6 @@ def split_nodes_image(old_nodes):
     for node in old_nodes:
         if node.text:
             images = extract_markdown_images(node.text)
-            print(images)
             if not images:
                 new_nodes.append(node)
             text = node.text

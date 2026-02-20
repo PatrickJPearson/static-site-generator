@@ -6,7 +6,6 @@ def split_nodes_link(old_nodes):
     for node in old_nodes:
         if node.text:
             links = extract_markdown_links(node.text)
-            print(links)
             if not links:
                 new_nodes.append(node)
             else:
