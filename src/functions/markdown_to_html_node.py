@@ -38,13 +38,14 @@ def markdown_to_html_node(md):
 
 
 def text_to_children(block):
+    print(block)
     lines = block.split('\n')
     head = 0
     lis = []
     strip_block = ""
     if lines[0][0] == '#' and "#######" not in lines[0]:
         head = lines[0].count('#')
-        lines[0] = lines[0][head:]
+        lines[0] = lines[0][head+1:]
     elif lines[0].startswith('> '):
         for line in lines:
             lis.append(line[2:])
