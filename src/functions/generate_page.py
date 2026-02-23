@@ -4,7 +4,8 @@ import os
 
 def generate_page(from_path, template_path, dest_path, basepath):
     print(f"Generating page from {from_path} to {dest_path} using {template_path}")
-    split_dest = dest_path.split('.')
+    split_dest = dest_path.split('/')
+    
     f = open(from_path)
     md = f.read()
     f = open(template_path)
@@ -16,7 +17,7 @@ def generate_page(from_path, template_path, dest_path, basepath):
     html_with_both = html_with_title.replace("{{ Content }}", md_as_html)
     html_with_href = html_with_both.replace('href="/', f'href="{basepath}')
     html_with_src = html_with_href.replace('src="/', f'src="{basepath}')
-    os.makedirs(split_dest[0], exist_ok=True)
+    os.makedirs('/'.join(split_dest[0:len(split_dest)-1]), exist_ok=True)
     with open(dest_path, 'w') as a:
         a.write(html_with_src)
 
