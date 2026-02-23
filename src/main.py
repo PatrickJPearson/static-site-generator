@@ -7,6 +7,6 @@ def main():
     basepath = '/'
     if sys.argv:
         basepath = sys.argv
-    copy_source("/home/pears/workspace/username/static-site-generator/public", "/home/pears/workspace/username/static-site-generator/static", True)
+    copy_source("/home/pears/workspace/username/static-site-generator/docs", "/home/pears/workspace/username/static-site-generator/static", True)
     generate_pages_recursive("content", "template.html", "docs", basepath)
 main()
